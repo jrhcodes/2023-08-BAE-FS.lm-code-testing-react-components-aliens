@@ -1,12 +1,12 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom'; // Import this for additional matchers like toHaveClass
 import W12MForm from './W12MForm';
 
 test('renders form element', () => {
-	// we can hold onto the object returned from render()
-	// this object has a container property that we can destructure and inspect
-	const { container } = render(<W12MForm />);
-
-	// the container is just a normal DOM element, so we can look at normal properties like '.firstChild'
-	// for example, the firstChild of our container should be our form element
-	expect(container.firstChild).toHaveClass('w12MForm');
+	render(<W12MForm />);
+	// Use Testing Library's getByTestId to get the form element
+	const formElement = screen.getByTestId('w12MForm');
+	// Assert that the form element has the expected class
+	expect(formElement).toHaveClass('w12MForm');
 });
+

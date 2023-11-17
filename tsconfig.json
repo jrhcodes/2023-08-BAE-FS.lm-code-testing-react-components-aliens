@@ -20,6 +20,12 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
+  "testing-library/no-node-access": [
+    "error",
+    {
+      "allowContainerFirstChild": true
+    }
+  ],
   "include": [
     "src"
   ]
