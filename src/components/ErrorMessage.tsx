@@ -1,3 +1,5 @@
+import "../css/error_message.css";
+
 export interface ErrorMessageProps {
     id: string;
     messages: string[];
