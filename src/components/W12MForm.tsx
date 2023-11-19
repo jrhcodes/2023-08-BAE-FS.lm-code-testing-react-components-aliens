@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import W12MHeader from './W12MHeader';
 import PlanetNameField from './PlanetNameField';
-import NumberOfBeingsField from './NumberOfBeings';
+import NumberOfBeingsField from './NumberOfBeingsField';
 import SpeciesNameField from './SpeciesNameField';
+import ArithmeticTestField from './ArithmeticTestField';
+import ReasonForSparingField from './ReasonForSparingField';
 
 export interface W12MFromProps {
 	id: string;
@@ -18,6 +20,12 @@ const W12MForm: React.FC<W12MFromProps> = (props) => {
 
 	const [numberOfBeingsFieldValue, setNumberOfBeingsFieldValue] = useState("");
 	const getNumberOfBeings = () => numberOfBeingsFieldValue;
+
+	const [arithmeticTestFieldValue, setArithmeticTestFieldValue] = useState("");
+	const getArithmeticTestFieldValue = () => arithmeticTestFieldValue;
+
+	const [reasonForSparingText, setReasonForSparingText] = useState("");
+	const getReasonForSparingText = () => reasonForSparingText;
 
 
 	return (
@@ -36,6 +44,15 @@ const W12MForm: React.FC<W12MFromProps> = (props) => {
 				getNumberOfBeings={getNumberOfBeings}
 			/>
 
+			<ArithmeticTestField id={`${props.id}--arithmeticTestField`}
+				setArithmeticTestValue={setArithmeticTestFieldValue}
+				getArithmeticTestValue={getArithmeticTestFieldValue}
+			/>
+
+			<ReasonForSparingField id={`${props.id}--reasonForSparingField`}
+				setReasonForSparingText={setReasonForSparingText}
+				getReasonForSparingText={getReasonForSparingText}
+			/>
 		</section>
 
 	);

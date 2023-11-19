@@ -1,4 +1,4 @@
-import TextInput from "./TextInput";
+import TextInputField from "./TextInputField";
 
 export interface PlanetNameFieldProps {
     id: string;
@@ -15,10 +15,10 @@ const planetNameValidator = (planetName: string): string[] => {
     return errorMessages;
 };
 
-const PlanetNameField: React.FC<PlanetNameFieldProps> = (props) => <TextInput
+const PlanetNameField: React.FC<PlanetNameFieldProps> = (props) => <TextInputField
     id={props.id}
     label="Planet Name: "
-    placeholder="type planet name here"
+    placeholder="type worthless planet name here"
     setContent={props.setPlanetName}
     getContent={props.getPlanetName}
     validator={planetNameValidator}

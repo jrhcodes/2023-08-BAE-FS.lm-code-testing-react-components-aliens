@@ -1,4 +1,4 @@
-import TextInput from "./TextInput";
+import TextInputField from "./TextInputField";
 
 export interface SpeciesNameFieldProps {
     id: string;
@@ -15,13 +15,15 @@ const speciesNameValidator = (speciesName: string): string[] => {
     return errorMessages;
 };
 
-const SpeciesNameField: React.FC<SpeciesNameFieldProps> = (props) => <TextInput
+const SpeciesNameField: React.FC<SpeciesNameFieldProps> = (props) => <TextInputField
     id={props.id}
     label="Species Name: "
-    placeholder="type species name here"
+    placeholder="type soon-to-be-extinct species name here"
     setContent={props.setSpeciesName}
     getContent={props.getSpeciesName}
     validator={speciesNameValidator}
 />;
+
+
 
 export default SpeciesNameField;

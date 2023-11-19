@@ -23,7 +23,6 @@ const randomAlienTalk = (): string => {
 
 const ErrorMessage: React.FC<ErrorMessageProps> = (props) => {
     const fullMessages = props.messages.map(message => `${randomAlienTalk()} ${message}`);
-    console.log({ props, fullMessage: fullMessages });
 
     return <div id={props.id} data-testid={props.id} className="ErrorMessage">
         {fullMessages.map(errormessage => <p>{errormessage}</p>)}

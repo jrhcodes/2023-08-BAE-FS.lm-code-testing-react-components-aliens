@@ -1,4 +1,4 @@
-import TextInput from "./TextInput";
+import TextInputField from "./TextInputField";
 
 export interface NumberOfBeingsFieldProps {
     id: string;
@@ -21,10 +21,10 @@ const numberOfBeingsValidator = (numberOfBeings: string): string[] => {
 };
 
 
-const NumberOfBeingsField: React.FC<NumberOfBeingsFieldProps> = (props) => <TextInput
+const NumberOfBeingsField: React.FC<NumberOfBeingsFieldProps> = (props) => <TextInputField
     id={props.id}
     label="Number of Beings: "
-    placeholder="type number of beings here"
+    placeholder="type number of unworthy beings here"
     setContent={props.setNumberOfBeings}
     getContent={props.getNumberOfBeings}
     validator={numberOfBeingsValidator}
